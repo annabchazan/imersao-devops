@@ -1,0 +1,18 @@
+services:
+  # Serviço da sua aplicação principal.
+  app:
+    # 'build: .' instrui o Docker a construir a imagem a partir do Dockerfile
+    # no diretório atual (onde o docker-compose.yml está).
+    # Se você já tiver uma imagem no Docker Hub, use 'image: seu-usuario/sua-imagem:tag'.
+    build: .
+    container_name: api
+    # Mapeia a porta 8000 do contêiner para a porta 8000 da sua máquina local.
+    # Altere conforme a porta que sua aplicação usa.
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual do projeto no diretório /app do contêiner.
+    # Isso é ótimo para desenvolvimento, pois as alterações no código são refletidas imediatamente.
+    volumes:
+      - .:/app
+    # Define variáveis de ambiente para a aplicação.
+   
